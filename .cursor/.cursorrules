@@ -1,0 +1,22 @@
+# NovaNet VPN - Enterprise Agent Rules
+
+## Project Overview
+NovaNet is a high-performance, private VPN built with Flutter, using V2Ray (Xray-core) for the tunnel and Firebase/Rowy for the management backend.
+
+## Tech Stack Requirements
+- **Frontend:** Flutter (v3.x), State Management: `Provider` or `Riverpod`.
+- **VPN Protocol:** V2Ray/Xray (via `flutter_v2ray` plugin).
+- **Backend:** Firebase (Firestore, Cloud Functions).
+- **Admin:** Rowy.io (Direct Firestore manipulation).
+- **Theme:** Sea Blue (#006994) and White (#FFFFFF).
+
+## Coding Standards
+1. **Safety First:** Never hardcode Server IPs. Always fetch them via encrypted Cloud Function calls.
+2. **Performance:** Use `RepaintBoundary` for the animated power button to prevent unnecessary UI rebuilds.
+3. **Architecture:** Follow a Clean Architecture pattern (Data -> Repository -> Domain -> UI).
+4. **Error Handling:** Every API call must have a `try-catch` block with user-friendly error messages (e.g., "Invalid Key" or "Server Full").
+
+## File Naming
+- Widgets: `snake_case_widget.dart`
+- Providers: `name_provider.dart`
+- Models: `name_model.dart`
