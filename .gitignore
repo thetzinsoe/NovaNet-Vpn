@@ -4,6 +4,11 @@
 *.pyc
 *.swp
 .DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 .atom/
 .build/
 .buildlog/
@@ -11,6 +16,10 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+*.tmp
+*.temp
+*.bak
+*.orig
 
 # IntelliJ related
 *.iml
@@ -23,6 +32,12 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
+# Cursor local workspace state.
+# Keep .cursor/rules, .cursor/skills, and .cursor/*.md project docs tracked.
+.cursor/index/
+.cursor/cache/
+.cursor/logs/
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
@@ -32,6 +47,8 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+.packages
+pubspec_overrides.yaml
 
 # Symbolication related
 app.*.symbols
@@ -43,3 +60,80 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Android generated/local files
+android/.gradle/
+android/local.properties
+android/**/build/
+android/captures/
+android/key.properties
+*.jks
+*.keystore
+
+# iOS/macOS generated/local files
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner.xcworkspace/xcuserdata/
+ios/Runner.xcodeproj/xcuserdata/
+ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+macos/Pods/
+macos/.symlinks/
+macos/Flutter/ephemeral/
+macos/Runner.xcworkspace/xcuserdata/
+macos/Runner.xcodeproj/xcuserdata/
+macos/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
+
+# Linux/Windows generated files
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# Firebase / secrets
+# Firebase client config is not a password, but ignore it for public repos unless
+# you intentionally want Firebase project identifiers in Git.
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebaserc.local
+
+# Environment files and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+service-account*.json
+credentials*.json
+
+# Cloud Functions
+functions/node_modules/
+functions/lib/
+functions/.runtimeconfig.json
+functions/firebase-debug.log
+functions/npm-debug.log*
+functions/yarn-debug.log*
+functions/yarn-error.log*
+
+# Test/output artifacts
+test-results/
+reports/
+screenshots/
+*.lcov
+
+# Archives and packaged builds
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.msix
+*.app.zip

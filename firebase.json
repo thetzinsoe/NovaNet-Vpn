@@ -1,0 +1,29 @@
+{
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "novanet-vpn",
+          "appId": "1:251265767014:android:949fa89b6a94a3b889ffa7",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "novanet-vpn",
+          "configurations": {
+            "android": "1:251265767014:android:949fa89b6a94a3b889ffa7",
+            "ios": "1:251265767014:ios:7668b8532648c0b889ffa7",
+            "macos": "1:251265767014:ios:7668b8532648c0b889ffa7",
+            "web": "1:251265767014:web:0a3e60d9ddf8d90a89ffa7",
+            "windows": "1:251265767014:web:3c36b028ce42c52789ffa7"
+          }
+        }
+      }
+    }
+  }
+}

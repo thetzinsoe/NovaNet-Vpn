@@ -1,0 +1,30 @@
+---
+description: NovaNet VPN Flutter app — structure, naming, and integration boundaries
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# NovaNet VPN (Flutter)
+
+## Structure
+
+- Keep **feature folders** self-contained: `domain/` → `data/` → `application/` → `presentation/`.
+- Put cross-cutting UI tokens in `lib/core/` (`theme/`, `constants/`). Avoid VPN logic in `core/`.
+- Wire dependencies in `lib/app/nova_providers.dart`. Prefer **constructor injection** on repositories so tests can substitute fakes.
+
+## Naming
+
+- Repositories: `VpnRepository`, `LicenseRepository`; stubs: `StubVpnRepository`, `StubLicenseRepository`.
+- Session orchestration stays in `VpnSessionController` — do not put tunnel APIs directly in widgets.
+
+## Integration rules
+
+- **Native VPN:** implement `VpnRepository` only in `data/` (or `data/sources/` if split). Surface state through `Stream<VpnConnectionState>` + `currentState`.
+- **Firebase:** implement `LicenseRepository` against callable + Firestore; never call Firebase from widgets — go through the controller or a dedicated service used by the controller.
+- **Secrets:** do not hardcode API keys; use `--dart-define`, native config, or Firebase remote config as appropriate.
+
+## UI
+
+- **Branding:** Sea Blue `#006994` and White — see [`lib/core/theme/app_colors.dart`](lib/core/theme/app_colors.dart) and `AppTheme.nova()` (aligned with [`.cursor/.cursorrules`](../.cursorrules)).
+- Use `AppTheme` / `AppColors` / `AppStrings` for new screens; wrap animated VPN controls in `RepaintBoundary` when they repaint independently of the rest of the screen.
+- Connection UX must reflect `VpnConnectionState` and license expiry from `VpnSessionController`.

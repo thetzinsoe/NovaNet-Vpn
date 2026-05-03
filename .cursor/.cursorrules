@@ -8,7 +8,7 @@ NovaNet is a high-performance, private VPN built with Flutter, using V2Ray (Xray
 - **VPN Protocol:** V2Ray/Xray (via `flutter_v2ray` plugin).
 - **Backend:** Firebase (Firestore, Cloud Functions).
 - **Admin:** Rowy.io (Direct Firestore manipulation).
-- **Theme:** Sea Blue (#006994) and White (#FFFFFF).
+- **Theme:** Sea Blue (#006994) and White (#FFFFFF) — implemented as `AppTheme.nova()` / `AppColors` in `lib/core/theme/`.
 
 ## Coding Standards
 1. **Safety First:** Never hardcode Server IPs. Always fetch them via encrypted Cloud Function calls.
